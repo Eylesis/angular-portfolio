@@ -2,31 +2,42 @@
 
   
 <mat-sidenav-container class="example-container">
-    <mat-sidenav class="example-sidenav-content" mode="side" opened>
+    <mat-sidenav class="example-sidenav-content" #sidenav mode="side" [(opened)]="opened">
           <br><img src="assets\logo.png" alt="HTML tutorial" style="max-width:50%;max-height:50%;border:0;"><br>
           <br>Kynten Slocum
           <br>Technical Artist
           <br>Full Stack Developer
           <mat-divider></mat-divider>
+          <br>
+          <a mat-button href="https://github.com/eylesis" target="_blank">
+            <mat-icon svgIcon="github"></mat-icon>
+            GitHub
+          </a>
+          <br>
+          <a mat-button href="mailto:kyntenslocum@gmail.com">
+              <mat-icon aria-label="Open Menu">mail</mat-icon>
+              Contact Me
+          </a>
+
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-main-content">
       <!--Main content-->
-      <mat-toolbar>
+      <mat-toolbar color="primary">
           <mat-toolbar-row>
-            <span>Page Title Probably?</span>
+              <button mat-icon-button (click)="sidenav.toggle()">
+                  <mat-icon aria-label="Open Menu">menu</mat-icon>
+                </button>
+            <span>Kynten Slocum's Portfolio</span>
           </mat-toolbar-row>
         </mat-toolbar>
       <div>
-        <mat-tab-group>
-          <mat-tab label="Tab1">
-            <mat-card>
-              <mat-card-title>Card title</mat-card-title>
-              <mat-card-content>Card Content</mat-card-content>
-            </mat-card>
+        <mat-tab-group class="tab-group">
+          <mat-tab color="accent" label="Projects">
+              <app-proj-grid></app-proj-grid>
           </mat-tab>
             
-          <mat-tab label="Tab2">
+          <mat-tab label="About Me">
           </mat-tab>
           
           <mat-tab label="Tab3">

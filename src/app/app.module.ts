@@ -1,3 +1,4 @@
+import {HttpClientModule} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -7,16 +8,19 @@ import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatSidenavContent,
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ProjGridComponent } from './proj-grid/proj-grid.component';
+import { ProjCardComponent } from './proj-card/proj-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ProjGridComponent
+    ProjGridComponent,
+    ProjCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatSidenavModule, MatTabsModule, MatToolbarModule,MatIconModule, MatDividerModule, MatCardModule
   ],
