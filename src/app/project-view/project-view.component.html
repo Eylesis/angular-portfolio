@@ -17,6 +17,17 @@
               <mat-icon aria-label="Open Menu">mail</mat-icon>
               Contact Me
           </a>
+          <mat-divider></mat-divider>
+          <a mat-button routerLink="">
+              <mat-icon aria-label="Open Menu">undo</mat-icon>
+              Back
+          </a>
+          <br>
+          
+          <a *ngFor="let i of items" mat-button routerLink="/projects/{{i.id}}" replaceUrl= True class = "truncate">
+              <mat-icon aria-label="Open Menu">code</mat-icon>
+              {{i.name}}
+          </a>
 
     </mat-sidenav>
 
@@ -24,9 +35,6 @@
       <!--Main content-->
       <mat-toolbar color="primary">
         <mat-toolbar-row>
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon aria-label="Open Menu">menu</mat-icon>
-              </button>
           <span>Kynten Slocum's Portfolio</span>
         </mat-toolbar-row>
       </mat-toolbar>

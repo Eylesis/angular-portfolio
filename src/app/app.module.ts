@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +11,8 @@ import { ProjGridComponent } from './proj-grid/proj-grid.component';
 import { ProjCardComponent } from './proj-card/proj-card.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectViewComponent } from './project-view/project-view.component';
+import { ResumeViewComponent } from './resume-view/resume-view.component';
+import { AboutmeViewComponent } from './aboutme-view/aboutme-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProjectViewComponent } from './project-view/project-view.component';
     MainComponent,
     ProjGridComponent,
     ProjCardComponent,
-    ProjectViewComponent
+    ProjectViewComponent,
+    ResumeViewComponent,
+    AboutmeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,9 @@ import { ProjectViewComponent } from './project-view/project-view.component';
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatSidenavModule, MatTabsModule, MatToolbarModule,MatIconModule, MatDividerModule, MatCardModule, AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

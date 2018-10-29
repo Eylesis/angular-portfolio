@@ -15,6 +15,7 @@ import { ProjectService }  from '../project.service';
 })
 export class ProjectViewComponent implements OnInit {
   item: projectCard;
+  items: projectCard[];
   opened: boolean = true;
   
   constructor( private route: ActivatedRoute,
@@ -27,12 +28,24 @@ export class ProjectViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getProject();
     this.getProjects();
   }
 
+  // getProject(): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.projectService.getProject(id)
+  //     .subscribe(item => this.item = item);
+  // }
+    getProject(): void {
+      this.route.params.subscribe( params => {
+        const id = +params['id'];
+        this.projectService.getProject(id).subscribe(item => this.item = item);
+      })
+    }
+
   getProjects(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.projectService.getProject(id)
-      .subscribe(item => this.item = item);
+    this.projectService.getProjects()
+    .subscribe(items => this.items = items);
   }
 }

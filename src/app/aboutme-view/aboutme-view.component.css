@@ -1,0 +1,25 @@
+.card-item{
+    overflow: hidden;
+
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    -moz-box-flex: 1;
+    margin: 2px 2px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.content {
+    width: 90%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.content img {
+    margin-right: 15px;
+    width: 25%;
+    height: 25%;
+    float: left;
+}

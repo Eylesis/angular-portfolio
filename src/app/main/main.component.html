@@ -3,7 +3,7 @@
   
 <mat-sidenav-container class="example-container">
     <mat-sidenav class="example-sidenav-content" #sidenav mode="side" [(opened)]="opened">
-          <br><img src="assets\logo.png" alt="HTML tutorial" style="max-width:50%;max-height:50%;border:0;"><br>
+          <br><img src="assets\logo.png" alt="My Logo" style="max-width:50%;max-height:50%;border:0;"><br>
           <br>Kynten Slocum
           <br>Technical Artist
           <br>Full Stack Developer
@@ -25,9 +25,6 @@
       <!--Main content-->
       <mat-toolbar color="primary">
           <mat-toolbar-row>
-              <button mat-icon-button (click)="sidenav.toggle()">
-                  <mat-icon aria-label="Open Menu">menu</mat-icon>
-                </button>
             <span>Kynten Slocum's Portfolio</span>
           </mat-toolbar-row>
         </mat-toolbar>
@@ -38,11 +35,13 @@
           </mat-tab>
             
           <mat-tab label="About Me">
+            <app-aboutme-view></app-aboutme-view>
           </mat-tab>
           
-          <mat-tab label="Tab3">
+          <mat-tab label="Resume">
+              <app-resume-view></app-resume-view>
           </mat-tab>
-
+         
         </mat-tab-group>
       </div> 
     </mat-sidenav-content>
