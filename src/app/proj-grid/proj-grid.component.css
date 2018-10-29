@@ -35,3 +35,19 @@
   max-width:350px;
 
 }
+
+.truncate {
+  width: 225px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button {
+  text-align:center;
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  height:30px;
+  transform: translate(-50%, 0%);
+}
