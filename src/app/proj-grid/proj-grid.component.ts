@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { projectCard } from '../projectCard';
-import { PROJECTS } from '../mock-projs';
+//import { PROJECTS } from '../mock-projs';
+import { ProjectService } from '../project.service';
+
 @Component({
   selector: 'app-proj-grid',
   templateUrl: './proj-grid.component.html',
@@ -8,12 +10,16 @@ import { PROJECTS } from '../mock-projs';
 })
 export class ProjGridComponent implements OnInit {
 
-  items=PROJECTS;
-  //items:Dict<string>= ['','','','','','','','','','','','']
+  items: projectCard[];
+
+  constructor(private projectService: ProjectService) { }
   
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+      this.getProjects();
+    }
+  
+    getProjects(): void {
+      this.projectService.getProjects()
+      .subscribe(items => this.items = items);
+    }
 }

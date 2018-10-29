@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +8,7 @@ import {MatIconRegistry} from '@angular/material';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  opened: boolean = false;
+  opened: boolean = true;
   
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
         sanitizer.bypassSecurityTrustResourceUrl('assets/github.svg'));
   }
   
-    ngOnInit() {
+  ngOnInit() {
   }
 
 }

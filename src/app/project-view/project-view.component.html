@@ -1,0 +1,48 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="example-sidenav-content" #sidenav mode="side" [(opened)]="opened">
+          <br><img src="assets\logo.png" alt="HTML tutorial" style="max-width:50%;max-height:50%;border:0;"><br>
+          <br>Kynten Slocum
+          <br>Technical Artist
+          <br>Full Stack Developer
+          <mat-divider></mat-divider>
+          <br>
+          <a mat-button href="https://github.com/eylesis" target="_blank">
+            <mat-icon svgIcon="github"></mat-icon>
+            GitHub
+          </a>
+          <br>
+          <a mat-button href="mailto:kyntenslocum@gmail.com">
+              <mat-icon aria-label="Open Menu">mail</mat-icon>
+              Contact Me
+          </a>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-main-content">
+      <!--Main content-->
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon aria-label="Open Menu">menu</mat-icon>
+              </button>
+          <span>Kynten Slocum's Portfolio</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      
+      <mat-card class="card-item">
+          <div class="header"><h2>{{item.name}}</h2></div>
+          <div class="header"><h4>{{item.type}}</h4></div>
+          <div> 
+              <pre>
+                <code>
+                 {{item.code}}
+                </code>     
+              </pre> 
+            </div> 
+      </mat-card>
+      
+       
+    </mat-sidenav-content>
+  </mat-sidenav-container>
